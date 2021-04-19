@@ -4,6 +4,7 @@ import cn.fengyunxiao.nest.entity.Ip;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +46,7 @@ public class IpUtil {
             urlConnection = (HttpURLConnection) url.openConnection();
 
             inputStream = urlConnection.getInputStream();
-            scanner = new Scanner(inputStream, StandardCharsets.UTF_8);
+            scanner = new Scanner(inputStream, "UTF-8");
             StringBuilder builder = new StringBuilder();
 
             while (scanner.hasNextLine()) {
@@ -100,7 +101,7 @@ public class IpUtil {
             urlConnection = (HttpURLConnection) url.openConnection();
 
             inputStream = urlConnection.getInputStream();
-            scanner = new Scanner(inputStream, StandardCharsets.UTF_8);
+            scanner = new Scanner(inputStream, "UTF_8");
             StringBuilder builder = new StringBuilder();
 
             while (scanner.hasNextLine()) {
